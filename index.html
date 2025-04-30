@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pater ni Richard</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: #bdcac0;
+        color: #333;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #06b92d;
+        border-radius: 100px;
+        padding: 15px 30px;
+        color: white;
+        font-weight: bold;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        letter-spacing: 1px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links div {
+        cursor: pointer;
+        transition: background 0.3s ease;
+        padding: 10px 15px;
+        border-radius: 8px;
+      }
+
+      .nav-links div:hover {
+        background-color: #c74329;
+      }
+
+      .banner {
+        text-align: center;
+        padding: 60px 20px;
+        background-image: url("pater.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        position: relative;
+        min-height: 600px;
+      }
+
+      .banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .banner-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .banner h1 {
+        font-size: 200px;
+        margin: 0;
+        font-weight: bold;
+      }
+
+      .banner h2 {
+        font-size: 60px;
+        margin: 10px 0;
+      }
+
+      .banner p {
+        font-size: 30px;
+        font-style: italic;
+      }
+
+      .section {
+        display: none;
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      .section.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .food-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 800px;
+        margin: auto;
+        padding-top: 20px;
+      }
+
+      .food-card {
+        background-color: #fff;
+        border: 2px solid #06b92d;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .food-card:hover {
+        transform: scale(1.05);
+      }
+
+      .food-card h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #333;
+      }
+
+      .food-card p {
+        margin: 10px 0 0;
+        color: #666;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">Pater ni Richard</div>
+      <div class="nav-links">
+        <div onclick="showSection('Home')">Home</div>
+        <div onclick="showSection('About')">About</div>
+        <div onclick="showSection('Menu')">Menu</div>
+        <div onclick="showSection('Contact')">Contact Us</div>
+      </div>
+    </div>
+
+    <div id="Home" class="section active">
+      <div class="banner">
+        <div class="banner-content">
+          <h2>All Day</h2>
+          <h1>PATER</h1>
+          <p>Your Favorite Pater Foods all day long.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="About" class="section">
+      <h2>About Us</h2>
+      <p>
+        Welcome to Pater ni Richard! We serve delicious and affordable Pater
+        meals with free water, perfect for any time of the day.
+      </p>
+    </div>
+
+    <div id="Menu" class="section">
+      <h2>Food Menu</h2>
+      <div class="food-grid">
+        <div class="food-card">
+          <img
+            src="bundle.jpg"
+            alt="Adobo Pater"
+            style="
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+              border-radius: 8px;
+            "
+          />
+          <h3>Bundle Pater</h3>
+          <p>Free water</p>
+        </div>
+        <div class="food-card">
+          <img
+            src="chicken.jpg"
+            alt="Adobo Pater"
+            style="
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+              border-radius: 8px;
+            "
+          />
+          <h3>Chicken Pater</h3>
+          <p>Free water</p>
+        </div>
+        <div class="food-card">
+          <img
+            src="Randang.jpg"
+            alt="Adobo Pater"
+            style="
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+              border-radius: 8px;
+            "
+          />
+          <h3>Randang Pater</h3>
+          <p>Free water</p>
+        </div>
+        <div class="food-card">
+          <img
+            src="images/adobo.jpg"
+            alt="Adobo Pater"
+            style="
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+              border-radius: 8px;
+            "
+          />
+          <h3>Adobo Pater</h3>
+          <p>Free water</p>
+        </div>
+        <div class="food-card">
+          <img
+            src="images/adobo.jpg"
+            alt="Adobo Pater"
+            style="
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+              border-radius: 8px;
+            "
+          />
+          <h3>Adobo Pater</h3>
+          <p>Free water</p>
+        </div>
+        <div class="food-card">
+          <img
+            src="images/adobo.jpg"
+            alt="Adobo Pater"
+            style="
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+              border-radius: 8px;
+            "
+          />
+          <h3>Adobo Pater</h3>
+          <p>Free water</p>
+        </div>
+        <div class="food-card">
+          <img
+            src="images/adobo.jpg"
+            alt="Adobo Pater"
+            style="
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+              border-radius: 8px;
+            "
+          />
+          <h3>Adobo Pater</h3>
+          <p>Free water</p>
+        </div>
+        <div class="food-card">
+          <img
+            src="images/adobo.jpg"
+            alt="Adobo Pater"
+            style="
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+              border-radius: 8px;
+            "
+          />
+          <h3>Adobo Pater</h3>
+          <p>Free water</p>
+        </div>
+        <div class="food-card">
+          <img
+            src="images/adobo.jpg"
+            alt="Adobo Pater"
+            style="
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+              border-radius: 8px;
+            "
+          />
+          <h3>Adobo Pater</h3>
+          <p>Free water</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="Contact" class="section">
+      <h2>Contact Us</h2>
+      <p>
+        Message us on Facebook at <strong>@PaterNiRichard</strong> or visit us
+        at Iligan City!
+      </p>
+    </div>
+
+    <script>
+      function showSection(sectionId) {
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => section.classList.remove("active"));
+        document.getElementById(sectionId).classList.add("active");
+      }
+    </script>
+  </body>
+</html>
